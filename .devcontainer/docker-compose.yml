@@ -1,0 +1,33 @@
+version: '3'
+services:
+  app:
+    image: node:16
+    volumes:
+      - .:/workspace:cached
+    working_dir: /workspace
+    command: sh -c "npm install && npm run develop"
+    ports:
+      - "1337:1337"
+    environment:
+      DATABASE_CLIENT: "postgres"
+      DATABASE_HOST: "db"
+      DATABASE_PORT: 5432
+      DATABASE_NAME: "strapi"
+      DATABASE_USERNAME: "strapi"
+      DATABASE_PASSWORD: "strapi"
+      DATABASE_SSL: "false"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
