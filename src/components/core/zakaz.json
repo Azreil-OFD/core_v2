@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_core_zakazs",
+  "info": {
+    "displayName": "Zakaz",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "decimal"
+    }
+  }
+}

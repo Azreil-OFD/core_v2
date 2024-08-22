@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lols",
+  "info": {
+    "singularName": "lol",
+    "pluralName": "lols",
+    "displayName": "LOL",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FullName": {
+      "type": "string"
+    },
+    "NomerTelephona": {
+      "type": "string",
+      "regex": "^\\+\\d{1,3}\\s?\\d{1,14}(\\s?\\d{1,13})?$"
+    },
+    "Pochta": {
+      "type": "email"
+    },
+    "Primechanie": {
+      "type": "blocks"
+    },
+    "totalOrderCost": {
+      "type": "decimal"
+    },
+    "Zakaz": {
+      "displayName": "Zakaz",
+      "type": "component",
+      "repeatable": true,
+      "component": "core.zakaz"
+    }
+  }
+}
